@@ -1,0 +1,21 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+indent_size = 4
+indent_style = tab
+insert_final_newline = false
+max_line_length = 120
+tab_width = 2
+
+[*.java]
+indent_style = space
+tab_width = 4
+
+[{*.jhm,*.xjb,*.rng,*.qrc,*.wsdl,*.wsdd,*.fxml,*.plan,*.bpmn,*.pom,*.xslt,*.jrxml,*.ant,*.xul,*.xsl,*.xsd,*.tld,*.jnlp,*.wadl,*.xml}]
+indent_style = space
+tab_width = 4
+
+[{*.yml,*.yaml}]
+indent_size = 2
