@@ -8,9 +8,12 @@ import lombok.NonNull;
 import java.util.StringJoiner;
 
 public class ModelMapper implements Mapper<Model, ModelDto> {
+
+    static final String DELIMITER = ", ";
+
     @Override
     public ModelDto map(@NonNull Model model) {
-        String address = new StringJoiner(", ")
+        String address = new StringJoiner(DELIMITER)
                 .add(model.getCity())
                 .add(model.getStreet())
                 .add(model.getNumber())
@@ -20,7 +23,7 @@ public class ModelMapper implements Mapper<Model, ModelDto> {
                 .id(model.getId())
                 .name(model.getName())
                 .address(address)
-                .location(new ModelDto.Location(model.getLatitude(), model.getLongitude()))
+                .location(ModelDto.Location.of(model.getLatitude(), model.getLongitude()))
                 .build();
     }
 }

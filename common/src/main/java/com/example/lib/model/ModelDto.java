@@ -13,7 +13,7 @@ public class ModelDto {
     private String address;
     private Location location;
 
-    @Value
+    @Value(staticConstructor = "of")
     public static class Location {
         private double latitude;
         private double longitude;
