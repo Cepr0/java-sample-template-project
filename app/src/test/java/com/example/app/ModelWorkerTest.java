@@ -14,6 +14,7 @@ import java.util.function.Supplier;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anySet;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @DisplayName("Model Worker Test")
 @ExtendWith(MockitoExtension.class)
@@ -26,6 +27,11 @@ public class ModelWorkerTest {
     @DisplayName("Do job test")
     @Test
     public void doJob() {
+        when(modelFactory.get()).thenReturn(
+            Model.builder().id(1).build(),
+            Model.builder().id(2).build(),
+            Model.builder().id(3).build()
+        );
         modelWorker.doJob();
         verify(printService).print(any(Model.class));
         verify(printService).print(anySet());
