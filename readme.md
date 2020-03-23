@@ -1,6 +1,6 @@
-# Sample project
+# Sample template project
 
-With:
+With usage examples of:
 - Some Java 8-11 features
 - Multi Maven modules
 - JUnit 5
@@ -8,4 +8,5 @@ With:
 - AssertJ
 - Logback
 - Fat jar
+- Some SOLID principles
  
