@@ -50,10 +50,12 @@ class SimpleModelFactoryTest {
             assertThat(model.getStreet()).isEqualTo(STREET);
             assertThat(model.getNumber()).isEqualTo(NUMBER);
             assertThat(model.getName()).isEqualTo(NAME);
+            assertThat(model.getLatitude()).isBetween(10.0, 50.0);
+            assertThat(model.getLongitude()).isBetween(0.0, 180.0);
         });
     }
 
-    @DisplayName("Ctor args must not be null")
+    @DisplayName("C-tor args must not be null")
     @Test
     void ctor_withNullArgs() {
         assertThatIllegalArgumentException().isThrownBy(() -> new SimpleModelFactory(null, faker));
